@@ -2,7 +2,7 @@
 
 Este projeto implementa uma API RESTful para uma Biblioteca Digital, utilizando ASP.NET Core com arquitetura em camadas e integração com Docker. O sistema permite o gerenciamento de livros e seus respectivos gêneros literários.
 
-Atividade feita na materia de TDS. Sendo dividisas em versões onde cada uma tem uma implementação nova
+Atividade feita na materia de TDS. Sendo divididas em versões onde cada uma tem uma implementação nova
 
 ## Arquitetura
 
