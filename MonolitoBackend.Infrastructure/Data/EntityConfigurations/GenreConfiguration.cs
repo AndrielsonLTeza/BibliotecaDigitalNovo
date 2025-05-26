@@ -8,6 +8,7 @@ namespace MonolitoBackend.Infrastructure.Data.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<Genre> builder)
         {
+            builder.ToTable("Genre"); 
             builder.HasKey(g => g.Id);
 
             builder.Property(g => g.Name)
@@ -15,7 +16,9 @@ namespace MonolitoBackend.Infrastructure.Data.EntityConfigurations
                 .HasMaxLength(50);
 
             builder.Property(g => g.Description)
-                .HasMaxLength(500);
+             .IsRequired()
+             .HasMaxLength(200);
+ 
 
             builder.HasMany(g => g.Books)
                 .WithOne(b => b.Genre)

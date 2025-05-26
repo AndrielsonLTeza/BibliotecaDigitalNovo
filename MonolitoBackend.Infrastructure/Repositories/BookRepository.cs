@@ -43,10 +43,11 @@ namespace MonolitoBackend.Infrastructure.Repositories
         }
 
         public async Task<Book> AddAsync(Book book)
-        {
+        {           
             _context.Books.Add(book);
             await _context.SaveChangesAsync();
             return book;
+            
         }
 
         public async Task UpdateAsync(Book book)

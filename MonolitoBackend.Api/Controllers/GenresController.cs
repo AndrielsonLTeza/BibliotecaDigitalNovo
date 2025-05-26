@@ -81,7 +81,7 @@ namespace MonolitoBackend.Api.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest($"Erro: {ex.Message} \n\n Inner: {ex.InnerException?.Message} \n\n StackTrace: {ex.StackTrace}");
             }
         }
 
@@ -107,31 +107,31 @@ namespace MonolitoBackend.Api.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest($"Erro: {ex.Message} \n\n Inner: {ex.InnerException?.Message} \n\n StackTrace: {ex.StackTrace}");
             }
         }
+            /// <summary>
+            /// Remove um gênero
+            /// </summary>
+            [HttpDelete("{id}")]
+            [ProducesResponseType(204)]
+            [ProducesResponseType(404)]
+            [ProducesResponseType(400)]
 
-        /// <summary>
-        /// Remove um gênero
-        /// </summary>
-        [HttpDelete("{id}")]
-        [ProducesResponseType(204)]
-        [ProducesResponseType(404)]
-        [ProducesResponseType(400)]
-        public async Task<IActionResult> Delete(int id)
-        {
-            try
+            public async Task<IActionResult> Delete(int id)
             {
-                var success = await _genreService.DeleteGenreAsync(id);
-                if (!success)
-                    return NotFound();
+                try
+                {
+                    var success = await _genreService.DeleteGenreAsync(id);
+                    if (!success)
+                        return NotFound();
 
-                return NoContent();
+                    return NoContent();
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest($"Erro: {ex.Message} \n\n Inner: {ex.InnerException?.Message} \n\n StackTrace: {ex.StackTrace}");
+                }
             }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
     }
 }

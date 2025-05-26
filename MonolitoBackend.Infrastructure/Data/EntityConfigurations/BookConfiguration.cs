@@ -8,6 +8,7 @@ namespace MonolitoBackend.Infrastructure.Data.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<Book> builder)
         {
+            builder.ToTable("Book"); 
             builder.HasKey(b => b.Id);
 
             builder.Property(b => b.Title)

@@ -77,7 +77,7 @@ DB_NAME=bibliotecadb
 
 1. Clone o repositório:
    ```bash
-   git clone [URL_DO_REPOSITORIO]
+   git clone [https://github.com/AndrielsonLTeza/BibliotecaDigitalNovo.git]
    cd biblioteca-digital-api
    ```
 

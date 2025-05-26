@@ -1,0 +1,12 @@
+F:\BibliotecaDigital\MonolitoBackend.Core\bin\Debug\net7.0\MonolitoBackend.Core.deps.json
+F:\BibliotecaDigital\MonolitoBackend.Core\bin\Debug\net7.0\MonolitoBackend.Core.dll
+F:\BibliotecaDigital\MonolitoBackend.Core\bin\Debug\net7.0\MonolitoBackend.Core.pdb
+F:\BibliotecaDigital\MonolitoBackend.Core\obj\Debug\net7.0\MonolitoBackend.Core.csproj.AssemblyReference.cache
+F:\BibliotecaDigital\MonolitoBackend.Core\obj\Debug\net7.0\MonolitoBackend.Core.GeneratedMSBuildEditorConfig.editorconfig
+F:\BibliotecaDigital\MonolitoBackend.Core\obj\Debug\net7.0\MonolitoBackend.Core.AssemblyInfoInputs.cache
+F:\BibliotecaDigital\MonolitoBackend.Core\obj\Debug\net7.0\MonolitoBackend.Core.AssemblyInfo.cs
+F:\BibliotecaDigital\MonolitoBackend.Core\obj\Debug\net7.0\MonolitoBackend.Core.csproj.CoreCompileInputs.cache
+F:\BibliotecaDigital\MonolitoBackend.Core\obj\Debug\net7.0\MonolitoBackend.Core.dll
+F:\BibliotecaDigital\MonolitoBackend.Core\obj\Debug\net7.0\refint\MonolitoBackend.Core.dll
+F:\BibliotecaDigital\MonolitoBackend.Core\obj\Debug\net7.0\MonolitoBackend.Core.pdb
+F:\BibliotecaDigital\MonolitoBackend.Core\obj\Debug\net7.0\ref\MonolitoBackend.Core.dll

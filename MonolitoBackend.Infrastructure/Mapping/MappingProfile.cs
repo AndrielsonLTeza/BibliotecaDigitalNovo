@@ -11,6 +11,9 @@ namespace MonolitoBackend.Infrastructure.Mapping
             // Configure seus mapeamentos aqui
             CreateMap<Book, BookDTO>();
             CreateMap<CreateBookDTO, Book>();
+            CreateMap<CreateGenreDTO, Genre>();
+            CreateMap<Genre, GenreDTO>(); // Também é útil para retorno
+
             // Adicione outros mapeamentos necessários
         }
     }

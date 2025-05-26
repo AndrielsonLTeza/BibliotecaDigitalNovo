@@ -22,6 +22,12 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+    options.JsonSerializerOptions.MaxDepth = 64; // opcional para aumentar profundidade permitida
+});
+
 
 // Configure DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -40,12 +46,16 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Biblioteca Digital API v1"));
+}else
+{
+    app.UseExceptionHandler("/error"); // ou configure um middleware de tratamento
 }
 
 app.UseHttpsRedirection();
-
+app.UseDeveloperExceptionPage();
 app.UseAuthorization();
 
 app.MapControllers();
