@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca Digital</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -26,256 +25,56 @@
         }
 
         .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             text-align: center;
+            margin-bottom: 40px;
+            color: white;
         }
 
         .header h1 {
-            color: #4a5568;
             font-size: 2.5rem;
             margin-bottom: 10px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .header p {
-            color: #718096;
-            font-size: 1.1rem;
-        }
-
-        .tabs {
+        .nav-tabs {
             display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
             justify-content: center;
-        }
-
-        .tab-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            padding: 15px 30px;
-            border-radius: 50px;
-            color: white;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            font-size: 1rem;
-        }
-
-        .tab-btn:hover, .tab-btn.active {
-            background: rgba(255, 255, 255, 0.9);
-            color: #4a5568;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .tab-content {
-            display: none;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .controls {
-            display: flex;
-            gap: 15px;
             margin-bottom: 30px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .search-box {
-            flex: 1;
-            min-width: 250px;
-            position: relative;
-        }
-
-        .search-box input {
-            width: 100%;
-            padding: 15px 50px 15px 20px;
-            border: 2px solid #e2e8f0;
-            border-radius: 50px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .search-box input:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .search-box i {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #a0aec0;
-        }
-
-        .btn {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 1rem;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
-        }
-
-        .btn-secondary {
-            background: linear-gradient(135deg, #f093fb, #f5576c);
-        }
-
-        .btn-danger {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
-        }
-
-        .filter-select {
-            padding: 15px 20px;
-            border: 2px solid #e2e8f0;
-            border-radius: 50px;
             background: white;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            border-radius: 10px;
+            padding: 5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        .filter-select:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid #e2e8f0;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .card h3 {
-            color: #2d3748;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-
-        .card p {
-            color: #718096;
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-
-        .card-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .btn-small {
-            padding: 8px 15px;
-            font-size: 0.9rem;
-            border-radius: 25px;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(5px);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal.active {
-            display: flex;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            max-width: 500px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #e2e8f0;
-        }
-
-        .modal-header h2 {
-            color: #2d3748;
-            font-size: 1.5rem;
-        }
-
-        .close-btn {
+        .nav-tab {
+            padding: 12px 30px;
             background: none;
             border: none;
-            font-size: 1.5rem;
             cursor: pointer;
-            color: #a0aec0;
-            transition: color 0.3s ease;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        .close-btn:hover {
-            color: #e53e3e;
+        .nav-tab.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .nav-tab:hover:not(.active) {
+            background: #f0f0f0;
+        }
+
+        .content-section {
+            display: none;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .content-section.active {
+            display: block;
         }
 
         .form-group {
@@ -285,671 +84,601 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 600;
-            color: #4a5568;
+            font-weight: 500;
+            color: #555;
         }
 
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            padding: 15px;
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            font-size: 1rem;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+        }
+
+        .btn-danger {
+            background: #e53e3e;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c53030;
+        }
+
+        .btn-warning {
+            background: #dd6b20;
+            color: white;
+        }
+
+        .btn-warning:hover {
+            background: #c05621;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
             transition: all 0.3s ease;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .card .actions {
+            margin-top: 15px;
+        }
+
+        .genre-filter {
+            margin-bottom: 20px;
         }
 
         .loading {
             text-align: center;
             padding: 40px;
-            color: #718096;
+            font-size: 18px;
+            color: #666;
         }
 
-        .loading i {
-            font-size: 2rem;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 60px 20px;
-            color: #718096;
-        }
-
-        .empty-state i {
-            font-size: 4rem;
+        .error {
+            background: #fed7d7;
+            color: #c53030;
+            padding: 15px;
+            border-radius: 8px;
             margin-bottom: 20px;
-            opacity: 0.5;
         }
 
-        .empty-state h3 {
-            margin-bottom: 10px;
-            color: #4a5568;
+        .success {
+            background: #c6f6d5;
+            color: #22543d;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
 
-        .genre-badge {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 15px 25px;
-            border-radius: 10px;
-            color: white;
-            font-weight: 600;
-            z-index: 1001;
-            transform: translateX(400px);
-            transition: transform 0.3s ease;
-        }
-
-        .notification.show {
-            transform: translateX(0);
-        }
-
-        .notification.success {
-            background: linear-gradient(135deg, #48bb78, #38a169);
-        }
-
-        .notification.error {
-            background: linear-gradient(135deg, #f56565, #e53e3e);
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 15px;
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-tabs {
+                flex-direction: column;
             }
             
             .header h1 {
                 font-size: 2rem;
             }
-            
-            .tabs {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .controls {
-                flex-direction: column;
-            }
-            
-            .search-box {
-                min-width: auto;
-            }
-            
-            .grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
 <body>
-    <script type="module" src="/src/main.jsx"></script>
     <div class="container">
         <div class="header">
-            <h1><i class="fas fa-book-open"></i> Biblioteca Digital</h1>
-            <p>Gerencie sua coleção de livros e gêneros</p>
+            <h1>📚 Biblioteca Digital</h1>
+            <p>Gerencie seus livros e gêneros literários</p>
         </div>
 
-        <div class="tabs">
-            <button class="tab-btn active" onclick="switchTab('books')">
-                <i class="fas fa-book"></i> Livros
-            </button>
-            <button class="tab-btn" onclick="switchTab('genres')">
-                <i class="fas fa-tags"></i> Gêneros
-            </button>
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showSection('books')">Livros</button>
+            <button class="nav-tab" onclick="showSection('genres')">Gêneros</button>
         </div>
 
-        <!-- Tab Livros -->
-        <div id="books" class="tab-content active">
-            <div class="controls">
-                <div class="search-box">
-                    <input type="text" id="searchBooks" placeholder="Pesquisar livros...">
-                    <i class="fas fa-search"></i>
-                </div>
-                <select id="genreFilter" class="filter-select">
+        <!-- Seção de Livros -->
+        <div id="books-section" class="content-section active">
+            <h2>Gerenciamento de Livros</h2>
+            
+            <div class="genre-filter">
+                <label>Filtrar por gênero:</label>
+                <select id="genre-filter" onchange="filterBooksByGenre()">
                     <option value="">Todos os gêneros</option>
                 </select>
-                <button class="btn" onclick="openBookModal()">
-                    <i class="fas fa-plus"></i> Novo Livro
-                </button>
             </div>
-            
-            <div id="booksLoading" class="loading">
-                <i class="fas fa-spinner"></i>
-                <p>Carregando livros...</p>
-            </div>
-            
-            <div id="booksGrid" class="grid"></div>
-        </div>
 
-        <!-- Tab Gêneros -->
-        <div id="genres" class="tab-content">
-            <div class="controls">
-                <div class="search-box">
-                    <input type="text" id="searchGenres" placeholder="Pesquisar gêneros...">
-                    <i class="fas fa-search"></i>
+            <form id="book-form" onsubmit="saveBook(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Título:</label>
+                        <input type="text" id="book-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Autor:</label>
+                        <input type="text" id="book-author" required>
+                    </div>
                 </div>
-                <button class="btn" onclick="openGenreModal()">
-                    <i class="fas fa-plus"></i> Novo Gênero
-                </button>
-            </div>
-            
-            <div id="genresLoading" class="loading">
-                <i class="fas fa-spinner"></i>
-                <p>Carregando gêneros...</p>
-            </div>
-            
-            <div id="genresGrid" class="grid"></div>
-        </div>
-    </div>
-
-    <!-- Modal Livro -->
-    <div id="bookModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="bookModalTitle">Novo Livro</h2>
-                <button class="close-btn" onclick="closeModal('bookModal')">&times;</button>
-            </div>
-            <form id="bookForm">
-                <div class="form-group">
-                    <label for="bookTitle">Título *</label>
-                    <input type="text" id="bookTitle" required>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>ISBN:</label>
+                        <input type="text" id="book-isbn" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ano de Publicação:</label>
+                        <input type="number" id="book-year" required>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="bookAuthor">Autor *</label>
-                    <input type="text" id="bookAuthor" required>
-                </div>
-                <div class="form-group">
-                    <label for="bookDescription">Descrição</label>
-                    <textarea id="bookDescription"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="bookGenre">Gênero *</label>
-                    <select id="bookGenre" required>
+                    <label>Gênero:</label>
+                    <select id="book-genre" required>
                         <option value="">Selecione um gênero</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="bookPublishedYear">Ano de Publicação</label>
-                    <input type="number" id="bookPublishedYear" min="1000" max="2024">
+                    <label>Descrição:</label>
+                    <textarea id="book-description" rows="3"></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="bookISBN">ISBN</label>
-                    <input type="text" id="bookISBN">
-                </div>
-                <div class="controls">
-                    <button type="submit" class="btn">
-                        <i class="fas fa-save"></i> Salvar
-                    </button>
-                    <button type="button" class="btn btn-secondary" onclick="closeModal('bookModal')">
-                        <i class="fas fa-times"></i> Cancelar
-                    </button>
-                </div>
+                <button type="submit" class="btn btn-primary" id="book-submit-btn">Adicionar Livro</button>
+                <button type="button" class="btn btn-warning" onclick="cancelBookEdit()" id="book-cancel-btn" style="display: none;">Cancelar</button>
             </form>
-        </div>
-    </div>
 
-    <!-- Modal Gênero -->
-    <div id="genreModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="genreModalTitle">Novo Gênero</h2>
-                <button class="close-btn" onclick="closeModal('genreModal')">&times;</button>
+            <div id="books-loading" class="loading" style="display: none;">
+                Carregando livros...
             </div>
-            <form id="genreForm">
+
+            <div id="books-grid" class="grid"></div>
+        </div>
+
+        <!-- Seção de Gêneros -->
+        <div id="genres-section" class="content-section">
+            <h2>Gerenciamento de Gêneros</h2>
+
+            <form id="genre-form" onsubmit="saveGenre(event)">
                 <div class="form-group">
-                    <label for="genreName">Nome *</label>
-                    <input type="text" id="genreName" required>
+                    <label>Nome do Gênero:</label>
+                    <input type="text" id="genre-name" required>
                 </div>
                 <div class="form-group">
-                    <label for="genreDescription">Descrição</label>
-                    <textarea id="genreDescription"></textarea>
+                    <label>Descrição:</label>
+                    <textarea id="genre-description" rows="3"></textarea>
                 </div>
-                <div class="controls">
-                    <button type="submit" class="btn">
-                        <i class="fas fa-save"></i> Salvar
-                    </button>
-                    <button type="button" class="btn btn-secondary" onclick="closeModal('genreModal')">
-                        <i class="fas fa-times"></i> Cancelar
-                    </button>
-                </div>
+                <button type="submit" class="btn btn-primary" id="genre-submit-btn">Adicionar Gênero</button>
+                <button type="button" class="btn btn-warning" onclick="cancelGenreEdit()" id="genre-cancel-btn" style="display: none;">Cancelar</button>
             </form>
+
+            <div id="genres-loading" class="loading" style="display: none;">
+                Carregando gêneros...
+            </div>
+
+            <div id="genres-grid" class="grid"></div>
         </div>
     </div>
 
     <script>
-        const API_BASE = 'http://localhost:5000/api';
+        // Configuração da API
+        const API_BASE_URL = 'http://localhost:5000/api';
         
-        let books = [];
-        let genres = [];
-        let editingBookId = null;
-        let editingGenreId = null;
-
-        // Inicialização
-        document.addEventListener('DOMContentLoaded', function() {
-            loadGenres();
-            loadBooks();
-            setupEventListeners();
-        });
-
-        function setupEventListeners() {
-            // Pesquisa em tempo real
-            document.getElementById('searchBooks').addEventListener('input', filterBooks);
-            document.getElementById('searchGenres').addEventListener('input', filterGenres);
-            document.getElementById('genreFilter').addEventListener('change', filterBooks);
-
-            // Formulários
-            document.getElementById('bookForm').addEventListener('submit', handleBookSubmit);
-            document.getElementById('genreForm').addEventListener('submit', handleGenreSubmit);
-
-            // Fechar modal ao clicar fora
-            document.querySelectorAll('.modal').forEach(modal => {
-                modal.addEventListener('click', function(e) {
-                    if (e.target === this) {
-                        closeModal(this.id);
-                    }
-                });
-            });
-        }
-
-        // Gerenciamento de Tabs
-        function switchTab(tabName) {
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-            
-            event.target.classList.add('active');
-            document.getElementById(tabName).classList.add('active');
-        }
-
-        // API Calls
-        async function apiCall(endpoint, options = {}) {
+        // Teste de conectividade
+        async function testConnection() {
             try {
-                const url = `${API_BASE}${endpoint}`;
-                console.log('Fazendo requisição para:', url);
-                console.log('Opções:', options);
+                const response = await fetch(`${API_BASE_URL}/Genres`, {
+                    method: 'GET',
+                    mode: 'cors'
+                });
+                console.log('Teste de conexão:', response.status);
+                return true;
+            } catch (error) {
+                console.error('Erro de conexão:', error);
+                showError('Backend não acessível. Verifique se está rodando em http://localhost:5000 e configure CORS');
+                return false;
+            }
+        }
+        
+        let currentEditingBook = null;
+        let currentEditingGenre = null;
+        let allBooks = [];
+        let allGenres = [];
+
+        // Funções de navegação
+        function showSection(section) {
+            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            
+            document.getElementById(`${section}-section`).classList.add('active');
+            event.target.classList.add('active');
+            
+            if (section === 'books') {
+                loadBooks();
+                loadGenresForSelect();
+            } else if (section === 'genres') {
+                loadGenres();
+            }
+        }
+
+        // Funções de API
+        async function apiRequest(url, options = {}) {
+            try {
+                console.log(`Fazendo requisição para: ${API_BASE_URL}${url}`);
                 
-                const response = await fetch(url, {
+                const response = await fetch(`${API_BASE_URL}${url}`, {
+                    mode: 'cors',
                     headers: {
                         'Content-Type': 'application/json',
+                        'Accept': 'application/json',
                         ...options.headers
                     },
                     ...options
                 });
                 
-                console.log('Resposta status:', response.status);
+                console.log(`Resposta recebida: ${response.status}`);
                 
                 if (!response.ok) {
                     const errorText = await response.text();
-                    console.log('Erro da API:', errorText);
-                    throw new Error(`HTTP error! status: ${response.status} - ${errorText}`);
+                    throw new Error(`HTTP ${response.status}: ${errorText || response.statusText}`);
                 }
                 
-                const data = await response.json();
-                console.log('Dados recebidos:', data);
-                return data;
+                // Se for DELETE e não houver conteúdo, retorna sucesso
+                if (response.status === 204) {
+                    return { success: true };
+                }
+                
+                const contentType = response.headers.get('content-type');
+                if (contentType && contentType.includes('application/json')) {
+                    return await response.json();
+                }
+                
+                return { success: true };
             } catch (error) {
-                console.error('API Error detalhado:', error);
-                showNotification(`Erro: ${error.message}`, 'error');
+                console.error('API Error:', error);
+                if (error.name === 'TypeError' && error.message.includes('Failed to fetch')) {
+                    showError('Erro de conexão: Verifique se o backend está rodando em http://localhost:5000');
+                } else {
+                    showError(`Erro na API: ${error.message}`);
+                }
                 throw error;
             }
         }
 
-        // Carregar dados
+        // Funções de mensagens
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error';
+            errorDiv.textContent = message;
+            document.querySelector('.content-section.active').insertBefore(errorDiv, document.querySelector('.content-section.active').firstChild);
+            setTimeout(() => errorDiv.remove(), 5000);
+        }
+
+        function showSuccess(message) {
+            const successDiv = document.createElement('div');
+            successDiv.className = 'success';
+            successDiv.textContent = message;
+            document.querySelector('.content-section.active').insertBefore(successDiv, document.querySelector('.content-section.active').firstChild);
+            setTimeout(() => successDiv.remove(), 3000);
+        }
+
+        // Funções de Livros
         async function loadBooks() {
+            document.getElementById('books-loading').style.display = 'block';
             try {
-                document.getElementById('booksLoading').style.display = 'block';
-                books = await apiCall('/Books');
-                renderBooks();
+                allBooks = await apiRequest('/Books');
+                displayBooks(allBooks);
             } catch (error) {
-                document.getElementById('booksGrid').innerHTML = `
-                    <div class="empty-state">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <h3>Erro ao carregar livros</h3>
-                        <p>Verifique se a API está rodando</p>
-                    </div>
-                `;
+                console.error('Erro ao carregar livros:', error);
             } finally {
-                document.getElementById('booksLoading').style.display = 'none';
+                document.getElementById('books-loading').style.display = 'none';
             }
         }
 
-        async function loadGenres() {
+        async function loadGenresForSelect() {
             try {
-                document.getElementById('genresLoading').style.display = 'block';
-                genres = await apiCall('/Genres');
-                renderGenres();
-                updateGenreSelects();
+                allGenres = await apiRequest('/Genres');
+                const bookGenreSelect = document.getElementById('book-genre');
+                const genreFilter = document.getElementById('genre-filter');
+                
+                // Limpar opções existentes
+                bookGenreSelect.innerHTML = '<option value="">Selecione um gênero</option>';
+                genreFilter.innerHTML = '<option value="">Todos os gêneros</option>';
+                
+                allGenres.forEach(genre => {
+                    const option1 = new Option(genre.name, genre.id);
+                    const option2 = new Option(genre.name, genre.id);
+                    bookGenreSelect.appendChild(option1);
+                    genreFilter.appendChild(option2);
+                });
             } catch (error) {
-                document.getElementById('genresGrid').innerHTML = `
-                    <div class="empty-state">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <h3>Erro ao carregar gêneros</h3>
-                        <p>Verifique se a API está rodando</p>
-                    </div>
-                `;
-            } finally {
-                document.getElementById('genresLoading').style.display = 'none';
+                console.error('Erro ao carregar gêneros:', error);
             }
         }
 
-        // Renderização
-        function renderBooks(filteredBooks = books) {
-            const grid = document.getElementById('booksGrid');
+        function displayBooks(books) {
+            const grid = document.getElementById('books-grid');
+            grid.innerHTML = '';
             
-            if (filteredBooks.length === 0) {
-                grid.innerHTML = `
-                    <div class="empty-state">
-                        <i class="fas fa-book-open"></i>
-                        <h3>Nenhum livro encontrado</h3>
-                        <p>Adicione alguns livros à sua biblioteca</p>
+            books.forEach(book => {
+                const genre = allGenres.find(g => g.id === book.genreId);
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h3>${book.title}</h3>
+                    <p><strong>Autor:</strong> ${book.author}</p>
+                    <p><strong>ISBN:</strong> ${book.isbn}</p>
+                    <p><strong>Ano:</strong> ${book.publicationYear}</p>
+                    <p><strong>Gênero:</strong> ${genre ? genre.name : 'N/A'}</p>
+                    ${book.description ? `<p><strong>Descrição:</strong> ${book.description}</p>` : ''}
+                    <div class="actions">
+                        <button class="btn btn-warning" onclick="editBook(${book.id})">Editar</button>
+                        <button class="btn btn-danger" onclick="deleteBook(${book.id})">Excluir</button>
                     </div>
                 `;
-                return;
-            }
-
-            grid.innerHTML = filteredBooks.map(book => {
-                const genre = genres.find(g => g.id === book.genreId);
-                return `
-                    <div class="card">
-                        <h3>${book.title}</h3>
-                        <p><strong>Autor:</strong> ${book.author}</p>
-                        ${book.description ? `<p><strong>Descrição:</strong> ${book.description}</p>` : ''}
-                        ${book.publishedYear ? `<p><strong>Ano:</strong> ${book.publishedYear}</p>` : ''}
-                        ${book.isbn ? `<p><strong>ISBN:</strong> ${book.isbn}</p>` : ''}
-                        ${genre ? `<span class="genre-badge">${genre.name}</span>` : ''}
-                        <div class="card-actions">
-                            <button class="btn btn-small" onclick="editBook(${book.id})">
-                                <i class="fas fa-edit"></i> Editar
-                            </button>
-                            <button class="btn btn-small btn-danger" onclick="deleteBook(${book.id})">
-                                <i class="fas fa-trash"></i> Excluir
-                            </button>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        function renderGenres(filteredGenres = genres) {
-            const grid = document.getElementById('genresGrid');
-            
-            if (filteredGenres.length === 0) {
-                grid.innerHTML = `
-                    <div class="empty-state">
-                        <i class="fas fa-tags"></i>
-                        <h3>Nenhum gênero encontrado</h3>
-                        <p>Adicione alguns gêneros para organizar seus livros</p>
-                    </div>
-                `;
-                return;
-            }
-
-            grid.innerHTML = filteredGenres.map(genre => {
-                const bookCount = books.filter(b => b.genreId === genre.id).length;
-                return `
-                    <div class="card">
-                        <h3>${genre.name}</h3>
-                        ${genre.description ? `<p>${genre.description}</p>` : ''}
-                        <p><strong>${bookCount}</strong> livro(s) neste gênero</p>
-                        <div class="card-actions">
-                            <button class="btn btn-small" onclick="editGenre(${genre.id})">
-                                <i class="fas fa-edit"></i> Editar
-                            </button>
-                            <button class="btn btn-small btn-danger" onclick="deleteGenre(${genre.id})">
-                                <i class="fas fa-trash"></i> Excluir
-                            </button>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        function updateGenreSelects() {
-            const selects = [
-                document.getElementById('bookGenre'),
-                document.getElementById('genreFilter')
-            ];
-
-            selects.forEach((select, index) => {
-                const currentValue = select.value;
-                const firstOption = select.querySelector('option').outerHTML;
-                
-                select.innerHTML = firstOption + genres.map(genre => 
-                    `<option value="${genre.id}">${genre.name}</option>`
-                ).join('');
-                
-                select.value = currentValue;
+                grid.appendChild(card);
             });
         }
 
-        // Filtros
-        function filterBooks() {
-            const searchTerm = document.getElementById('searchBooks').value.toLowerCase();
-            const genreFilter = document.getElementById('genreFilter').value;
-            
-            const filtered = books.filter(book => {
-                const matchesSearch = book.title.toLowerCase().includes(searchTerm) ||
-                                    book.author.toLowerCase().includes(searchTerm) ||
-                                    (book.description && book.description.toLowerCase().includes(searchTerm));
-                
-                const matchesGenre = !genreFilter || book.genreId == genreFilter;
-                
-                return matchesSearch && matchesGenre;
-            });
-            
-            renderBooks(filtered);
-        }
-
-        function filterGenres() {
-            const searchTerm = document.getElementById('searchGenres').value.toLowerCase();
-            
-            const filtered = genres.filter(genre => 
-                genre.name.toLowerCase().includes(searchTerm) ||
-                (genre.description && genre.description.toLowerCase().includes(searchTerm))
-            );
-            
-            renderGenres(filtered);
-        }
-
-        // Modais
-        function openBookModal(book = null) {
-            editingBookId = book ? book.id : null;
-            document.getElementById('bookModalTitle').textContent = book ? 'Editar Livro' : 'Novo Livro';
-            
-            if (book) {
-                document.getElementById('bookTitle').value = book.title || '';
-                document.getElementById('bookAuthor').value = book.author || '';
-                document.getElementById('bookDescription').value = book.description || '';
-                document.getElementById('bookGenre').value = book.genreId || '';
-                document.getElementById('bookPublishedYear').value = book.publishedYear || '';
-                document.getElementById('bookISBN').value = book.isbn || '';
-            } else {
-                document.getElementById('bookForm').reset();
-            }
-            
-            document.getElementById('bookModal').classList.add('active');
-        }
-
-        function openGenreModal(genre = null) {
-            editingGenreId = genre ? genre.id : null;
-            document.getElementById('genreModalTitle').textContent = genre ? 'Editar Gênero' : 'Novo Gênero';
-            
-            if (genre) {
-                document.getElementById('genreName').value = genre.name || '';
-                document.getElementById('genreDescription').value = genre.description || '';
-            } else {
-                document.getElementById('genreForm').reset();
-            }
-            
-            document.getElementById('genreModal').classList.add('active');
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.remove('active');
-            editingBookId = null;
-            editingGenreId = null;
-        }
-
-        // CRUD Operations
-        async function handleBookSubmit(e) {
-            e.preventDefault();
+        async function saveBook(event) {
+            event.preventDefault();
             
             const bookData = {
-                title: document.getElementById('bookTitle').value,
-                author: document.getElementById('bookAuthor').value,
-                description: document.getElementById('bookDescription').value,
-                genreId: parseInt(document.getElementById('bookGenre').value),
-                publishedYear: document.getElementById('bookPublishedYear').value ? 
-                              parseInt(document.getElementById('bookPublishedYear').value) : null,
-                isbn: document.getElementById('bookISBN').value
+                title: document.getElementById('book-title').value,
+                author: document.getElementById('book-author').value,
+                isbn: document.getElementById('book-isbn').value,
+                publicationYear: parseInt(document.getElementById('book-year').value),
+                genreId: parseInt(document.getElementById('book-genre').value),
+                description: document.getElementById('book-description').value
             };
 
             try {
-                if (editingBookId) {
-                    await apiCall(`/Books/${editingBookId}`, {
+                if (currentEditingBook) {
+                    await apiRequest(`/Books/${currentEditingBook}`, {
                         method: 'PUT',
-                        body: JSON.stringify({ id: editingBookId, ...bookData })
+                        body: JSON.stringify(bookData)
                     });
-                    showNotification('Livro atualizado com sucesso!', 'success');
+                    showSuccess('Livro atualizado com sucesso!');
                 } else {
-                    await apiCall('/Books', {
+                    await apiRequest('/Books', {
                         method: 'POST',
                         body: JSON.stringify(bookData)
                     });
-                    showNotification('Livro criado com sucesso!', 'success');
+                    showSuccess('Livro adicionado com sucesso!');
                 }
                 
-                closeModal('bookModal');
+                resetBookForm();
                 loadBooks();
             } catch (error) {
-                showNotification('Erro ao salvar livro', 'error');
+                console.error('Erro ao salvar livro:', error);
             }
         }
 
-        async function handleGenreSubmit(e) {
-            e.preventDefault();
-            
-            const genreData = {
-                name: document.getElementById('genreName').value,
-                description: document.getElementById('genreDescription').value
-            };
-
+        async function editBook(id) {
             try {
-                if (editingGenreId) {
-                    await apiCall(`/Genres/${editingGenreId}`, {
-                        method: 'PUT',
-                        body: JSON.stringify({ id: editingGenreId, ...genreData })
-                    });
-                    showNotification('Gênero atualizado com sucesso!', 'success');
-                } else {
-                    await apiCall('/Genres', {
-                        method: 'POST',
-                        body: JSON.stringify(genreData)
-                    });
-                    showNotification('Gênero criado com sucesso!', 'success');
-                }
+                const book = await apiRequest(`/Books/${id}`);
                 
-                closeModal('genreModal');
-                loadGenres();
+                document.getElementById('book-title').value = book.title;
+                document.getElementById('book-author').value = book.author;
+                document.getElementById('book-isbn').value = book.isbn;
+                document.getElementById('book-year').value = book.publicationYear;
+                document.getElementById('book-genre').value = book.genreId;
+                document.getElementById('book-description').value = book.description || '';
+                
+                currentEditingBook = id;
+                document.getElementById('book-submit-btn').textContent = 'Atualizar Livro';
+                document.getElementById('book-cancel-btn').style.display = 'inline-block';
             } catch (error) {
-                showNotification('Erro ao salvar gênero', 'error');
+                console.error('Erro ao carregar livro para edição:', error);
             }
-        }
-
-        function editBook(id) {
-            const book = books.find(b => b.id === id);
-            if (book) openBookModal(book);
-        }
-
-        function editGenre(id) {
-            const genre = genres.find(g => g.id === id);
-            if (genre) openGenreModal(genre);
         }
 
         async function deleteBook(id) {
             if (confirm('Tem certeza que deseja excluir este livro?')) {
                 try {
-                    await apiCall(`/Books/${id}`, { method: 'DELETE' });
-                    showNotification('Livro excluído com sucesso!', 'success');
+                    await apiRequest(`/Books/${id}`, { method: 'DELETE' });
+                    showSuccess('Livro excluído com sucesso!');
                     loadBooks();
                 } catch (error) {
-                    showNotification('Erro ao excluir livro', 'error');
+                    console.error('Erro ao excluir livro:', error);
                 }
+            }
+        }
+
+        function cancelBookEdit() {
+            resetBookForm();
+        }
+
+        function resetBookForm() {
+            document.getElementById('book-form').reset();
+            currentEditingBook = null;
+            document.getElementById('book-submit-btn').textContent = 'Adicionar Livro';
+            document.getElementById('book-cancel-btn').style.display = 'none';
+        }
+
+        function filterBooksByGenre() {
+            const selectedGenreId = document.getElementById('genre-filter').value;
+            if (selectedGenreId === '') {
+                displayBooks(allBooks);
+            } else {
+                const filteredBooks = allBooks.filter(book => book.genreId == selectedGenreId);
+                displayBooks(filteredBooks);
+            }
+        }
+
+        // Funções de Gêneros
+        async function loadGenres() {
+            document.getElementById('genres-loading').style.display = 'block';
+            try {
+                allGenres = await apiRequest('/Genres');
+                displayGenres(allGenres);
+            } catch (error) {
+                console.error('Erro ao carregar gêneros:', error);
+            } finally {
+                document.getElementById('genres-loading').style.display = 'none';
+            }
+        }
+
+        function displayGenres(genres) {
+            const grid = document.getElementById('genres-grid');
+            grid.innerHTML = '';
+            
+            genres.forEach(genre => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h3>${genre.name}</h3>
+                    ${genre.description ? `<p>${genre.description}</p>` : ''}
+                    <div class="actions">
+                        <button class="btn btn-warning" onclick="editGenre(${genre.id})">Editar</button>
+                        <button class="btn btn-danger" onclick="deleteGenre(${genre.id})">Excluir</button>
+                        <button class="btn btn-primary" onclick="viewGenreBooks(${genre.id})">Ver Livros</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        async function saveGenre(event) {
+            event.preventDefault();
+            
+            const genreData = {
+                name: document.getElementById('genre-name').value,
+                description: document.getElementById('genre-description').value
+            };
+
+            try {
+                if (currentEditingGenre) {
+                    await apiRequest(`/Genres/${currentEditingGenre}`, {
+                        method: 'PUT',
+                        body: JSON.stringify(genreData)
+                    });
+                    showSuccess('Gênero atualizado com sucesso!');
+                } else {
+                    await apiRequest('/Genres', {
+                        method: 'POST',
+                        body: JSON.stringify(genreData)
+                    });
+                    showSuccess('Gênero adicionado com sucesso!');
+                }
+                
+                resetGenreForm();
+                loadGenres();
+            } catch (error) {
+                console.error('Erro ao salvar gênero:', error);
+            }
+        }
+
+        async function editGenre(id) {
+            try {
+                const genre = await apiRequest(`/Genres/${id}`);
+                
+                document.getElementById('genre-name').value = genre.name;
+                document.getElementById('genre-description').value = genre.description || '';
+                
+                currentEditingGenre = id;
+                document.getElementById('genre-submit-btn').textContent = 'Atualizar Gênero';
+                document.getElementById('genre-cancel-btn').style.display = 'inline-block';
+            } catch (error) {
+                console.error('Erro ao carregar gênero para edição:', error);
             }
         }
 
         async function deleteGenre(id) {
-            const booksInGenre = books.filter(b => b.genreId === id).length;
-            
-            if (booksInGenre > 0) {
-                showNotification(`Não é possível excluir. Existem ${booksInGenre} livro(s) neste gênero.`, 'error');
-                return;
-            }
-            
             if (confirm('Tem certeza que deseja excluir este gênero?')) {
                 try {
-                    await apiCall(`/Genres/${id}`, { method: 'DELETE' });
-                    showNotification('Gênero excluído com sucesso!', 'success');
+                    await apiRequest(`/Genres/${id}`, { method: 'DELETE' });
+                    showSuccess('Gênero excluído com sucesso!');
                     loadGenres();
                 } catch (error) {
-                    showNotification('Erro ao excluir gênero', 'error');
+                    console.error('Erro ao excluir gênero:', error);
                 }
             }
         }
 
-        // Notificações
-        function showNotification(message, type = 'success') {
-            const notification = document.createElement('div');
-            notification.className = `notification ${type}`;
-            notification.innerHTML = `
-                <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
-                ${message}
-            `;
-            
-            document.body.appendChild(notification);
-            
-            setTimeout(() => notification.classList.add('show'), 100);
-            
-            setTimeout(() => {
-                notification.classList.remove('show');
-                setTimeout(() => document.body.removeChild(notification), 300);
-            }, 3000);
+        function cancelGenreEdit() {
+            resetGenreForm();
         }
 
-        // Keyboard shortcuts
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.modal.active').forEach(modal => {
-                    closeModal(modal.id);
-                });
+        function resetGenreForm() {
+            document.getElementById('genre-form').reset();
+            currentEditingGenre = null;
+            document.getElementById('genre-submit-btn').textContent = 'Adicionar Gênero';
+            document.getElementById('genre-cancel-btn').style.display = 'none';
+        }
+
+        async function viewGenreBooks(genreId) {
+            try {
+                const books = await apiRequest(`/Books/by-genre/${genreId}`);
+                showSection('books');
+                displayBooks(books);
+                showSuccess(`Mostrando livros do gênero selecionado`);
+            } catch (error) {
+                console.error('Erro ao carregar livros por gênero:', error);
+            }
+        }
+
+        // Inicializar aplicação
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log('Iniciando aplicação...');
+            const isConnected = await testConnection();
+            if (isConnected) {
+                loadBooks();
+                loadGenresForSelect();
             }
         });
     </script>
