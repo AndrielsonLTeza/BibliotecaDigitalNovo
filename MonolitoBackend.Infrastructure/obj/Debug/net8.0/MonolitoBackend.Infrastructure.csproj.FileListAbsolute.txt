@@ -1,0 +1,17 @@
+F:\BibliotecaDigital\MonolitoBackend.Infrastructure\bin\Debug\net8.0\MonolitoBackend.Infrastructure.deps.json
+F:\BibliotecaDigital\MonolitoBackend.Infrastructure\bin\Debug\net8.0\MonolitoBackend.Infrastructure.runtimeconfig.json
+F:\BibliotecaDigital\MonolitoBackend.Infrastructure\bin\Debug\net8.0\MonolitoBackend.Infrastructure.dll
+F:\BibliotecaDigital\MonolitoBackend.Infrastructure\bin\Debug\net8.0\MonolitoBackend.Infrastructure.pdb
+F:\BibliotecaDigital\MonolitoBackend.Infrastructure\bin\Debug\net8.0\MonolitoBackend.Core.dll
+F:\BibliotecaDigital\MonolitoBackend.Infrastructure\bin\Debug\net8.0\MonolitoBackend.Core.pdb
+F:\BibliotecaDigital\MonolitoBackend.Infrastructure\obj\Debug\net8.0\MonolitoBackend.Infrastructure.csproj.AssemblyReference.cache
+F:\BibliotecaDigital\MonolitoBackend.Infrastructure\obj\Debug\net8.0\MonolitoBackend.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+F:\BibliotecaDigital\MonolitoBackend.Infrastructure\obj\Debug\net8.0\MonolitoBackend.Infrastructure.AssemblyInfoInputs.cache
+F:\BibliotecaDigital\MonolitoBackend.Infrastructure\obj\Debug\net8.0\MonolitoBackend.Infrastructure.AssemblyInfo.cs
+F:\BibliotecaDigital\MonolitoBackend.Infrastructure\obj\Debug\net8.0\MonolitoBackend.Infrastructure.csproj.CoreCompileInputs.cache
+F:\BibliotecaDigital\MonolitoBackend.Infrastructure\obj\Debug\net8.0\Monolito.54C886CD.Up2Date
+F:\BibliotecaDigital\MonolitoBackend.Infrastructure\obj\Debug\net8.0\MonolitoBackend.Infrastructure.dll
+F:\BibliotecaDigital\MonolitoBackend.Infrastructure\obj\Debug\net8.0\refint\MonolitoBackend.Infrastructure.dll
+F:\BibliotecaDigital\MonolitoBackend.Infrastructure\obj\Debug\net8.0\MonolitoBackend.Infrastructure.pdb
+F:\BibliotecaDigital\MonolitoBackend.Infrastructure\obj\Debug\net8.0\MonolitoBackend.Infrastructure.genruntimeconfig.cache
+F:\BibliotecaDigital\MonolitoBackend.Infrastructure\obj\Debug\net8.0\ref\MonolitoBackend.Infrastructure.dll
